@@ -1,5 +1,6 @@
 class Shop:
-
+    QUANTITY_OF_GOODS = 0
+    
     def set_shop_name(self, value):
         self._shop_name = value
 
