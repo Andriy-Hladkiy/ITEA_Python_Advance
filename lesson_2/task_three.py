@@ -1,4 +1,4 @@
-class Example:
+class Point:
     def __init__(self, x, y, z):
         self._x = x
         self._y = y
@@ -23,16 +23,16 @@ class Example:
         return self._z
 
     def __mul__(self, other):
-        return Example(
+        return Point(
             self.get_x() * other.get_x(),
             self.get_y() * other.get_y(),
             self.get_z() * other.get_z()
         )
 
 
-point1 = Example(1, 3, 5)
-point2 = Example(5, 7, 3)
+point_one = Point(1, 3, 5)
+point_two = Point(5, 7, 3)
 
-result_point = point1 * point2
+result_point = point_one * point_two
 
 print(result_point.get_x(), result_point.get_y(), result_point.get_z())
