@@ -1,8 +1,8 @@
 class Example:
-    def __init__(self, value):
-        self._x = value
-        self._y = value
-        self._z = value
+    def __init__(self, x, y, z):
+        self._x = x
+        self._y = y
+        self._z = z
 
     def set_x(self, value):
         self._x = value
@@ -24,19 +24,15 @@ class Example:
 
     def __mul__(self, other):
         return Example(
-            self.get_x() * other.get_x()
+            self.get_x() * other.get_x(),
+            self.get_y() * other.get_y(),
+            self.get_z() * other.get_z()
         )
 
 
-x_one = Example(int(input('Enter x1:\n')))
-y_one = Example(int(input('Enter y1:\n')))
-z_one = Example(int(input('Enter z1:\n')))
-x_two = Example(int(input('Enter x2:\n')))
-y_two = Example(int(input('Enter y2:\n')))
-z_two = Example(int(input('Enter z2:\n')))
+point1 = Example(1, 3, 5)
+point2 = Example(5, 7, 3)
 
-x_result = x_one * x_two
-y_result = y_one * y_two
-z_result = z_one * z_two
+result_point = point1 * point2
 
-print(x_result.get_x(), y_result.get_y(), z_result.get_z())
+print(result_point.get_x(), result_point.get_y(), result_point.get_z())
