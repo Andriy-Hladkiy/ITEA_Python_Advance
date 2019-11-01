@@ -1,25 +1,38 @@
-class Example:
-    def __init__(self, x):
+class Point:
+    def __init__(self, x, y, z):
         self._x = x
+        self._y = y
+        self._z = z
+
+    def set_x(self, value):
+        self._x = value
 
     def get_x(self):
         return self._x
 
+    def set_y(self, value):
+        self._y = value
+
+    def get_y(self):
+        return self._y
+
+    def set_z(self, value):
+        self._z = value
+
+    def get_z(self):
+        return self._z
+
     def __mul__(self, other):
-        return Example(
-            self.get_x() * other.get_x()
+        return Point(
+            self.get_x() * other.get_x(),
+            self.get_y() * other.get_y(),
+            self.get_z() * other.get_z()
         )
 
 
-x_one = Example(int(input('Enter x1')))
-y_one = Example(int(input('Enter y1')))
-z_one = Example(int(input('Enter z1')))
-x_two = Example(int(input('Enter x2')))
-y_two = Example(int(input('Enter y2')))
-z_two = Example(int(input('Enter z3')))
+point_one = Point(1, 3, 5)
+point_two = Point(5, 7, 3)
 
-x_result = x_one * x_two
-y_result = y_one * y_two
-z_result = z_one * z_two
+result_point = point_one * point_two
 
-print(x_result.get_x(), y_result.get_x(), z_result.get_x())
+print(result_point.get_x(), result_point.get_y(), result_point.get_z())
